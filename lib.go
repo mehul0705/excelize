@@ -56,7 +56,7 @@ func (f *File) saveFileList(name string, content []byte) {
 func readFile(file *zip.File) []byte {
 	rc, err := file.Open()
 	if err != nil {
-		log.Fatal(err)
+		log.Panic(err)
 	}
 	buff := bytes.NewBuffer(nil)
 	_, _ = io.Copy(buff, rc)
